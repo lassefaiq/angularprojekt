@@ -51,6 +51,28 @@ html, body {
     border-radius: 50%; /* runda hörn */
 }
 
+.promo-link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: inherit;
+    text-align: center;
+  }
+  
+  .promo-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 8px 16px;
+    border-radius: 12px;
+  }
+  
+
 
 /* vänster bild */
 .hero-left {

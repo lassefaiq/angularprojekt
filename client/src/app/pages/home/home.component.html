@@ -1,0 +1,35 @@
+<!-- Hero section -->
+<header class="hero-section">
+  <div class="hero-left">
+    <div class="hero-text"></div>
+  </div>
+  <div class="hero-right"></div>
+</header>
+
+<!-- Promo section -->
+<div class="promo-section">
+  <img src="assets/image1.jpeg" alt="Promo 1" class="promo-image" />
+  <img src="assets/image2.webp" alt="Promo 2" class="promo-image" />
+  <img src="assets/image3.jpeg" alt="Promo 3" class="promo-image" />
+</div>
+
+<!-- Products -->
+<div class="home-container">
+  <section class="categories">
+    <h2>Våra T-shirts</h2>
+    <div class="category-grid">
+      <a 
+        class="category" 
+        *ngFor="let product of products" 
+        [routerLink]="['/products', product.slug]">
+        
+        <!-- 👇 Image path fixed -->
+        <img [src]="product.image" [alt]="product.name" class="category-image" />
+      
+        <p class="product-name">{{ product.name }}</p>
+        <p class="product-price">{{ product.price }} SEK</p>
+        <div class="heart-icon">♡</div>
+      </a>
+    </div>
+  </section>
+</div>

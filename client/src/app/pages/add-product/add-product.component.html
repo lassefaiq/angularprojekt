@@ -1,0 +1,62 @@
+<div class="admin-container">
+    <aside class="admin-sidebar">
+      <h2>Produkter</h2>
+    </aside>
+  
+    <main class="admin-main">
+      <h1>Ny produkt</h1>
+      <form class="admin-form" (ngSubmit)="handleSubmit()">
+        <label>
+          Namn:
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="formData.name"
+            required
+          />
+        </label>
+  
+        <label>
+          Beskrivning:
+          <textarea
+            name="description"
+            [(ngModel)]="formData.description"
+            required
+          ></textarea>
+        </label>
+  
+        <label>
+          Bild (URL):
+          <input
+            type="text"
+            name="image"
+            [(ngModel)]="formData.image"
+            required
+          />
+        </label>
+  
+        <label>
+          SKU:
+          <input
+            type="text"
+            name="sku"
+            [(ngModel)]="formData.sku"
+            required
+          />
+        </label>
+  
+        <label>
+          Pris:
+          <input
+            type="number"
+            name="price"
+            [(ngModel)]="formData.price"
+            required
+          />
+        </label>
+  
+        <button type="submit">Lägg till</button>
+      </form>
+    </main>
+  </div>
+  

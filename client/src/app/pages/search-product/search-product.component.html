@@ -1,0 +1,20 @@
+<div class="product-list">
+    <h2 style="text-align: center; margin-bottom: 20px;">
+      Hittade {{ filteredProducts.length }} produkter
+    </h2>
+  
+    <div class="product-grid">
+      <a
+        *ngFor="let product of filteredProducts"
+        [routerLink]="['/products', product.slug]"
+        class="product-card"
+        style="text-decoration: none; color: black;"
+      >
+        <img [src]="product.image" [alt]="product.name" />
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.price }} SEK</p>
+        <div class="heart-icon">♡</div> <!-- Placeholder for FaRegHeart -->
+      </a>
+    </div>
+  </div>
+  

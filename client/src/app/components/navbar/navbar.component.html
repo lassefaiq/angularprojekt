@@ -1,0 +1,34 @@
+<nav class="navbar">
+  <div class="logo">
+    <a routerLink="/">FREAKY FASHION.</a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a routerLink="/" routerLinkActive="active">Herr</a></li>
+    <li><a routerLink="/" routerLinkActive="active">Dam</a></li>
+    <li><a routerLink="/" routerLinkActive="active">Skor</a></li>
+    <li><a routerLink="/" [ngClass]="{ 'active': false }" class="sale">Rea</a></li>
+    <li><a routerLink="/" routerLinkActive="active">Kampanjer</a></li>
+    <li><a routerLink="/" routerLinkActive="active">Varumärken</a></li>
+    <li><a routerLink="/" routerLinkActive="active">Freaky Mag.</a></li>
+  </ul>
+
+  <form class="search-bar" (submit)="handleSearch($event)">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      name="search"
+      placeholder="Sök..."
+      required
+    />
+    <button type="submit">
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </button>
+  </form>
+
+  <div class="nav-icons">
+    <fa-icon [icon]="faSmile" class="icon"></fa-icon>
+    <fa-icon [icon]="faHeart" class="icon"></fa-icon>
+    <fa-icon [icon]="faShoppingBag" class="icon"></fa-icon>
+  </div>
+</nav>

@@ -1,0 +1,34 @@
+<div *ngIf="!product">
+    <p>Loading product...</p>
+  </div>
+  
+  <div *ngIf="product">
+    <div class="product-details">
+      <div class="product-image">
+        <img [src]="product.image" [alt]="product.name" />
+      </div>
+  
+      <div class="product-info">
+        <h1>{{ product.name }}</h1>
+        <p class="description">{{ product.description }}</p>
+        <p class="price">{{ product.price }} SEK</p>
+        <button class="add-to-cart">Lägg i varukorg</button>
+      </div>
+    </div>
+  
+    <div class="similar-products">
+      <h2>Liknande produkter</h2>
+      <div class="similar-grid">
+        <a
+          *ngFor="let similarProduct of similarProducts"
+          class="product-card"
+          [routerLink]="['/products', similarProduct.slug]"
+        >
+          <img [src]="similarProduct.image" [alt]="similarProduct.name" />
+          <p>{{ similarProduct.name }}</p>
+          <p>{{ similarProduct.price }} SEK</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  

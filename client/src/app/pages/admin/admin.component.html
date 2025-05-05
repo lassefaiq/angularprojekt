@@ -1,0 +1,38 @@
+<div class="admin-container">
+    <aside class="sidebar">
+      <h2>Administration</h2>
+      <nav>
+        <ul>
+          <li><a routerLink="/admin/products">Produkter</a></li>
+        </ul>
+      </nav>
+    </aside>
+  
+    <div class="admin-content">
+      <h1>Produkter</h1>
+      <a routerLink="/admin/products/new" class="new-product-button">Ny produkt</a>
+  
+      <table class="product-table">
+        <thead>
+          <tr>
+            <th>Namn</th>
+            <th>SKU</th>
+            <th>Pris</th>
+            <th>Åtgärder</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ product.name }}</td>
+            <td>{{ product.sku }}</td>
+            <td>{{ product.price }} SEK</td>
+            <td>
+              <button class="delete-btn" (click)="handleDelete(product.id)">
+                Ta bort
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

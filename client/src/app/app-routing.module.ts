@@ -25,13 +25,15 @@ const routes: Routes = [
     path: 'admin',
     loadComponent: () =>
       import('./pages/admin/admin.component').then((m) => m.AdminComponent),
-  },
-  {
-    path: 'admin/products/new',
-    loadComponent: () =>
-      import('./pages/add-product/add-product.component').then(
-        (m) => m.AddProductComponent
-      ),
+    children: [
+      {
+        path: 'products/new',
+        loadComponent: () =>
+          import('./pages/add-product/add-product.component').then(
+            (m) => m.AddProductComponent
+          ),
+      }
+    ]
   },
   {
     path: '**',

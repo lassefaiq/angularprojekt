@@ -3,7 +3,11 @@
     <a routerLink="/">FREAKY FASHION.</a>
   </div>
 
-  <ul class="nav-links">
+  <!-- Mobile menu toggle -->
+  <div class="menu-icon" (click)="toggleMenu()">☰</div>
+
+  <!-- Nav links -->
+  <ul class="nav-links" [class.open]="isMenuOpen">
     <li><a routerLink="/" routerLinkActive="active">Herr</a></li>
     <li><a routerLink="/" routerLinkActive="active">Dam</a></li>
     <li><a routerLink="/" routerLinkActive="active">Skor</a></li>
@@ -13,6 +17,7 @@
     <li><a routerLink="/" routerLinkActive="active">Freaky Mag.</a></li>
   </ul>
 
+  <!-- Search bar -->
   <form class="search-bar" (submit)="handleSearch($event)">
     <input
       type="text"
@@ -26,6 +31,7 @@
     </button>
   </form>
 
+  <!-- Icons -->
   <div class="nav-icons">
     <fa-icon [icon]="faSmile" class="icon"></fa-icon>
     <fa-icon [icon]="faHeart" class="icon"></fa-icon>

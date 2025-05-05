@@ -8,10 +8,20 @@
 
 <!-- Promo section -->
 <div class="promo-section">
-  <img src="assets/image1.jpeg" alt="Promo 1" class="promo-image" />
-  <img src="assets/image2.webp" alt="Promo 2" class="promo-image" />
-  <img src="assets/image3.jpeg" alt="Promo 3" class="promo-image" />
+  <a [routerLink]="['/']">
+    <img src="assets/image1.jpeg" alt="Promo 1" class="promo-image" />
+    <p style="text-align:center;">Herr</p>
+  </a>
+  <a [routerLink]="['/']">
+    <img src="assets/image2.webp" alt="Promo 2" class="promo-image" />
+    <p style="text-align:center;">Dam</p>
+  </a>
+  <a [routerLink]="['/']">
+    <img src="assets/image3.jpeg" alt="Promo 3" class="promo-image" />
+    <p style="text-align:center;">Barn</p>
+  </a>
 </div>
+
 
 <!-- Products -->
 <div class="home-container">

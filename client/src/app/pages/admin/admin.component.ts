@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router'; // ✅ Add this
 
 @Component({
   standalone: true,
@@ -9,7 +10,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./admin.component.css'],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule // ✅ Required for <router-outlet>
   ]
 })
 export class AdminComponent implements OnInit {

@@ -23,8 +23,9 @@ import { SearchService } from '../../services/search.service';
 })
 export class NavbarComponent {
   searchTerm: string = '';
+  isMenuOpen: boolean = false; // ✅ added for toggle logic
 
-  // Direct icon bindings
+  // Icon bindings
   faSearch = faSearch;
   faSmile = faSmile;
   faHeart = faHeart;
@@ -34,11 +35,15 @@ export class NavbarComponent {
 
   handleSearch(event: Event): void {
     event.preventDefault();
-
     const trimmed = this.searchTerm.trim();
     if (trimmed !== '') {
       this.searchService.setSearchTerm(trimmed);
       this.router.navigate(['/products'], { queryParams: { search: trimmed } });
+      this.isMenuOpen = false; // Optional: close menu on search
     }
+  }
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

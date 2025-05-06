@@ -34,7 +34,7 @@ export class ProductDetailsComponent implements OnInit {
       next: (productData) => {
         this.product = productData;
 
-        // fetch all products for "similar" section
+        // fetchar alla produkter för liknande produkter
         this.http.get<any[]>('http://localhost:3001/products').subscribe(allProducts => {
           const filtered = allProducts.filter(p => p.slug !== slug);
           const shuffled = filtered.sort(() => Math.random() - 0.5);

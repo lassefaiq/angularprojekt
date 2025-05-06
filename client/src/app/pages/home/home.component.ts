@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     this.http.get<any[]>('http://localhost:3001/products')
       .subscribe({
         next: (data) => {
-          console.log('Fetched products:', data); // ✅ Console log here
+          console.log('Fetched products:', data); //  Console log 
           this.products = data;
         },
         error: (err) => console.error('Error fetching products:', err)
